@@ -19,12 +19,12 @@ import coil.load
 [x] Implementar clase Adapter
 [x] Heredar RecyclerView.Adapter
 [x] Crear clase anidada ViewHolder, que hereda de la clase ViewHolder
-[] Agregar constructor (implement members)
-[] Crear objeto, data class
-[] Crear lista
+[x] Agregar constructor (implement members)
+[x] Crear objeto, data class
+[x] Crear lista
 [] Asignar tamaño de la lista en getItemCount
-[] Definir Binding Class del Item
-[] Cambiar View por el binding
+[x] Definir Binding Class del Item
+[x] Cambiar View por el binding
 [] Declarar variable item en onBindViewHolder
 [] Implementar binding en clase ViewHolder
 [] Adapter + ViewHolder
