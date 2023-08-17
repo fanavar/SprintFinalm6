@@ -8,9 +8,6 @@ fun Phone.toPhoneEntity(): PhoneEntity {
         id = this.id,
         name = this.name,
         price = this.price,
-        image = this.image,
-        credit = this.credit
+        image = this.image
     )
 }
-
-//función de extensión

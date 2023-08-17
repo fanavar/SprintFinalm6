@@ -7,7 +7,7 @@ class PhoneRetrofit {
     companion object{
         private const val URL_BASE = "https://my-json-server.typicode.com/Himuravidal/FakeAPIdata/"
 
-        val getRetrofitPhone(): PhoneAPI{
+        fun getRetrofitPhone(): PhoneAPI{
             val mRetrofit = Retrofit.Builder()
                 .baseUrl(URL_BASE)
                 .addConverterFactory(GsonConverterFactory.create())

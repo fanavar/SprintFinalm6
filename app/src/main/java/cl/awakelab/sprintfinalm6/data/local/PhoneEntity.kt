@@ -5,10 +5,8 @@ import androidx.room.PrimaryKey
 
 @Entity(tableName = "table_phones")
 data class PhoneEntity(
-    @PrimaryKey val id: String,
+    @PrimaryKey val id: Int,
     val name: String,
     val price: Int,
-    val image: String,
-    val dimensions: String,
-    val credit: Boolean
+    val image: String
 )
