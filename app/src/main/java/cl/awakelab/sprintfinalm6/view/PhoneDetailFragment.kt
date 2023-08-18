@@ -29,7 +29,7 @@ class PhoneDetailFragment : Fragment() {
         phoneViewModel.getPhoneDetail(phoneId)
         phoneViewModel.phoneDetailLiveData(phoneId).observe(viewLifecycleOwner, Observer { detailPhone ->
             if (detailPhone != null) {
-                //binding.tvIDDetail.text = detailPhone.id.toString()
+               // binding.tvIDDetail.text = detailPhone.id.toString()
                 binding.imageViewItemDetail.load(detailPhone.image)
                 binding.tvNameDetail.text = detailPhone.name
                 binding.tvPriceDetail.text = "Precio oferta $" + detailPhone.price.toString()
@@ -41,15 +41,17 @@ class PhoneDetailFragment : Fragment() {
                     binding.tvCreditDetail.text = "Se acepta tarjeta de crédito"
                 }
             }
+
         })
-        binding.btnContact.setOnClickListener {
+        binding.fabContact.setOnClickListener {
             val contact = "info@novaera.cl"
             val emailIntent = Intent(Intent.ACTION_SENDTO)
-            val emailText = "Hola: \nVi este teléfono y me gustaría que me contactaran a este correo o al siguiente número +56984682043"
-
-            // Define el esquema "mailto:" y el destinatario del correo
+            val emailText = "Hola:\nVi este teléfono y me gustaría que me contactaran a este correo o al siguiente número +56984682043"
+            val productName = binding.tvNameDetail.text.toString()
+            val productId = phoneId
+            val subject = "Consulta $productName id $productId"
             val uriText = "mailto:$contact" +
-                    "?subject=" + Uri.encode("Asunto del correo") +
+                    "?subject=" + Uri.encode(subject) +
                     "&body=" + Uri.encode(emailText)
             val uri = Uri.parse(uriText)
             emailIntent.data = uri
