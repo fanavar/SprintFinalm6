@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/cLayoutItem1"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    android:background="#FFFFFF">
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cvItemPhone"
@@ -20,7 +21,8 @@
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/cLayoutItemDetail2"
             android:layout_width="match_parent"
-            android:layout_height="339dp">
+            android:layout_height="339dp"
+            android:background="#FFFFFF">
 
             <ImageView
                 android:id="@+id/imageViewItem"
@@ -39,6 +41,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Nombre"
+                android:textColor="#212121"
                 android:textStyle="bold|italic"
                 app:layout_constraintBottom_toTopOf="@+id/tvPrice"
                 app:layout_constraintEnd_toEndOf="@+id/imageViewItem"
