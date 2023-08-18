@@ -5,7 +5,7 @@ import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
 
-@Database(entities = [PhoneEntity::class], version = 1)
+@Database(entities = [PhoneEntity::class, PhoneDetailEntity::class], version = 2, exportSchema = false)
 abstract class PhoneDatabase: RoomDatabase() {
     abstract fun getPhoneDao(): PhoneDao
 
@@ -22,8 +22,10 @@ abstract class PhoneDatabase: RoomDatabase() {
                 val instance = Room.databaseBuilder(
                     context.applicationContext,
                     PhoneDatabase::class.java,
+
                     "phone_database"
-                ).build()
+                ).fallbackToDestructiveMigration()
+                .build()
 
                 INSTANCE = instance
                 return instance

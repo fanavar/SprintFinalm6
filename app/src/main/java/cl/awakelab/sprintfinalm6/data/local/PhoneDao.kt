@@ -11,7 +11,13 @@ interface PhoneDao {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun insertPhone(phoneEntity: List<PhoneEntity>)
 
-    @Query("Select * from table_phones order by id desc")
+    @Query("Select * from table_phones order by id asc")
     fun getPhones(): LiveData<List<PhoneEntity>>
+
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
+    suspend fun insertPhoneDetail(phoneDetailEntity: PhoneDetailEntity)
+
+    @Query("Select * from table_detail_phones where id = :id")
+    fun getPhoneDetail(id: Int): LiveData<PhoneDetailEntity>
 
 }

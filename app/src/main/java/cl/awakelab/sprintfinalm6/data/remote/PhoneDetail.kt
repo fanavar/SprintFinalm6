@@ -1,6 +1,6 @@
 package cl.awakelab.sprintfinalm6.data.remote
 
-data class DetailPhone(
+data class PhoneDetail(
     val id: Int,
     val name: String,
     val price: Int,

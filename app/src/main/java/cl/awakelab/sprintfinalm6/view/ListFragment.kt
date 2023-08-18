@@ -6,6 +6,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.activityViewModels
+import androidx.navigation.Navigation
+import cl.awakelab.sprintfinalm6.view.PhonesAdapter
 
 import cl.awakelab.sprintfinalm6.R
 import cl.awakelab.sprintfinalm6.databinding.FragmentListBinding
@@ -30,13 +32,14 @@ class ListFragment : Fragment() {
         return binding.root
     }
 
+
     private fun initAdapter() {
         val adapter = PhonesAdapter()
 
         binding.rvPhonesList.adapter = adapter
-        phoneViewModel.phoneLiveData().observe(viewLifecycleOwner){
+        phoneViewModel.phoneLiveData().observe(viewLifecycleOwner) {
             adapter.setData(it)
         }
     }
-
 }
+

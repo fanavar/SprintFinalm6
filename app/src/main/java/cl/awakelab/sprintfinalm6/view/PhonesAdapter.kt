@@ -1,9 +1,7 @@
 package cl.awakelab.sprintfinalm6.view
 
-import android.content.ClipData.Item
 import android.os.Bundle
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.Navigation
 import androidx.recyclerview.widget.RecyclerView
@@ -11,7 +9,7 @@ import cl.awakelab.sprintfinalm6.R
 import cl.awakelab.sprintfinalm6.data.local.PhoneEntity
 import cl.awakelab.sprintfinalm6.databinding.ItemPhoneBinding
 import coil.load
-
+import cl.awakelab.sprintfinalm6.view.PhonesAdapter
 
 /*
 [x] Item Layout
@@ -35,6 +33,7 @@ class PhonesAdapter : RecyclerView.Adapter<PhonesAdapter.PhoneViewHolder>() {
 
     lateinit var binding: ItemPhoneBinding
     private var phoneList = mutableListOf<PhoneEntity>()
+    private var onItemClickListener: ((PhoneEntity) -> Unit)? = null
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PhoneViewHolder {
        binding = ItemPhoneBinding.inflate(LayoutInflater.from(parent.context), parent, false)
 
@@ -55,20 +54,20 @@ class PhonesAdapter : RecyclerView.Adapter<PhonesAdapter.PhoneViewHolder>() {
         this.phoneList.addAll(phone)
         notifyDataSetChanged()
     }
-    class PhoneViewHolder(val phonesViews: ItemPhoneBinding): RecyclerView.ViewHolder(phonesViews.root) {
+
+    inner class PhoneViewHolder(val phonesViews: ItemPhoneBinding): RecyclerView.ViewHolder(phonesViews.root) {
         fun bind(phone: PhoneEntity){
-            val bundle = Bundle()
+
             phonesViews.tvID.text = phone.id.toString()
             phonesViews.tvName.text = phone.name
             phonesViews.tvPrice.text = phone.price.toString()
-            phonesViews.imageViewItem.load(phone.image){
-               // placeholder(R.drawable.placeholder_image)
-               // error(R.drawable.error_image)
+            phonesViews.imageViewItem.load(phone.image)
+            phonesViews.cvItemPhone.setOnClickListener {
+                val bundle = Bundle()
+                bundle.putInt("id", phone.id)
+                Navigation.findNavController(phonesViews.root).navigate(R.id.action_listFragment_to_phoneDetailFragment, bundle)
             }
-            /*phonesViews.cvItem.setOnClickListener {
-                bundle.putString("id", phone.id)
-                Navigation.findNavController(phonesViews.root).navigate(R.id.action_)
-            }*/
+
         }
 
     }
