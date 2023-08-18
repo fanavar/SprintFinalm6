@@ -31,8 +31,6 @@ class ListFragment : Fragment() {
         phoneViewModel.getPhones()
         return binding.root
     }
-
-
     private fun initAdapter() {
         val adapter = PhonesAdapter()
 

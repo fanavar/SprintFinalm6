@@ -27,7 +27,17 @@ class PhoneDetailFragment : Fragment() {
         phoneViewModel.getPhoneDetail(phoneId)
         phoneViewModel.phoneDetailLiveData(phoneId).observe(viewLifecycleOwner, Observer { detailPhone ->
             if (detailPhone != null) {
-
+                binding.tvIDDetail.text = detailPhone.id.toString()
+                binding.imageViewItemDetail.load(detailPhone.image)
+                binding.tvNameDetail.text = detailPhone.name
+                binding.tvPriceDetail.text = detailPhone.price.toString()
+                binding.tvDescriptionDetail.text = detailPhone.description
+                binding.tvLastPriceDetail.text = detailPhone.lastPrice.toString()
+                if(!detailPhone.credit){
+                    binding.tvCreditDetail.text = "Sólo pago en efectivo"
+                }else{
+                    binding.tvCreditDetail.text = "Se acepta tarjeta de crédito"
+                }
             }
         })
 
