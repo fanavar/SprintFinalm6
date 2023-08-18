@@ -20,32 +20,19 @@
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/cLayoutItemDetail2"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="339dp">
 
             <ImageView
                 android:id="@+id/imageViewItem"
-                android:layout_width="80dp"
-                android:layout_height="97dp"
+                android:layout_width="147dp"
+                android:layout_height="197dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.078"
+                app:layout_constraintHorizontal_bias="0.048"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="1.0"
+                app:layout_constraintVertical_bias="0.119"
                 tools:srcCompat="@tools:sample/avatars" />
-
-            <TextView
-                android:id="@+id/tvID"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="4dp"
-                android:layout_marginBottom="1dp"
-                android:text="ID"
-                app:layout_constraintBottom_toTopOf="@+id/tvName"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.102"
-                app:layout_constraintStart_toEndOf="@+id/imageViewItem"
-                app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
                 android:id="@+id/tvName"
@@ -53,24 +40,21 @@
                 android:layout_height="wrap_content"
                 android:text="Nombre"
                 app:layout_constraintBottom_toTopOf="@+id/tvPrice"
-                app:layout_constraintEnd_toEndOf="@+id/tvID"
-                app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="@+id/tvID"
-                app:layout_constraintTop_toBottomOf="@+id/tvID"
-                app:layout_constraintVertical_bias="0.368" />
+                app:layout_constraintEnd_toEndOf="@+id/imageViewItem"
+                app:layout_constraintStart_toStartOf="@+id/imageViewItem"
+                app:layout_constraintTop_toBottomOf="@+id/imageViewItem"
+                app:layout_constraintVertical_bias="0.281" />
 
             <TextView
                 android:id="@+id/tvPrice"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="4dp"
-                android:layout_marginBottom="31dp"
-                android:text="Precio"
+                android:layout_marginBottom="52dp"
+                android:text="$"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="@+id/tvName"
                 app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="@+id/tvName"
-                app:layout_constraintTop_toBottomOf="@+id/tvName" />
+                app:layout_constraintStart_toStartOf="@+id/tvName" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.cardview.widget.CardView>

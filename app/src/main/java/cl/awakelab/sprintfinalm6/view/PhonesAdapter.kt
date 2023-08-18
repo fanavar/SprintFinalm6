@@ -58,9 +58,9 @@ class PhonesAdapter : RecyclerView.Adapter<PhonesAdapter.PhoneViewHolder>() {
     inner class PhoneViewHolder(val phonesViews: ItemPhoneBinding): RecyclerView.ViewHolder(phonesViews.root) {
         fun bind(phone: PhoneEntity){
 
-            phonesViews.tvID.text = phone.id.toString()
+           // phonesViews.tvID.text = phone.id.toString()
             phonesViews.tvName.text = phone.name
-            phonesViews.tvPrice.text = phone.price.toString()
+            phonesViews.tvPrice.text = "$" + phone.price.toString()
             phonesViews.imageViewItem.load(phone.image)
             phonesViews.cvItemPhone.setOnClickListener {
                 val bundle = Bundle()
