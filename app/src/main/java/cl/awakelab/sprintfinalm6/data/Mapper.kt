@@ -25,3 +25,4 @@ fun PhoneDetail.toPhoneDetailEntity(): PhoneDetailEntity{
         credit = this.credit
     )
 }
+
