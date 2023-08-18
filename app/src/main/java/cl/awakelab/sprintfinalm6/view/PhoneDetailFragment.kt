@@ -3,10 +3,10 @@ package cl.awakelab.sprintfinalm6.view
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.Observer
 import cl.awakelab.sprintfinalm6.databinding.FragmentDetailPhoneBinding
@@ -29,12 +29,12 @@ class PhoneDetailFragment : Fragment() {
         phoneViewModel.getPhoneDetail(phoneId)
         phoneViewModel.phoneDetailLiveData(phoneId).observe(viewLifecycleOwner, Observer { detailPhone ->
             if (detailPhone != null) {
-                binding.tvIDDetail.text = detailPhone.id.toString()
+                //binding.tvIDDetail.text = detailPhone.id.toString()
                 binding.imageViewItemDetail.load(detailPhone.image)
                 binding.tvNameDetail.text = detailPhone.name
-                binding.tvPriceDetail.text = detailPhone.price.toString()
+                binding.tvPriceDetail.text = "Precio oferta $" + detailPhone.price.toString()
                 binding.tvDescriptionDetail.text = detailPhone.description
-                binding.tvLastPriceDetail.text = detailPhone.lastPrice.toString()
+                binding.tvLastPriceDetail.text = "Precio referencia $" + detailPhone.lastPrice.toString()
                 if(!detailPhone.credit){
                     binding.tvCreditDetail.text = "Sólo pago en efectivo"
                 }else{
@@ -42,20 +42,21 @@ class PhoneDetailFragment : Fragment() {
                 }
             }
         })
-        binding.btnContact.setOnClickListener{
+        binding.btnContact.setOnClickListener {
             val contact = "info@novaera.cl"
             val emailIntent = Intent(Intent.ACTION_SENDTO)
-            val emailText = "Hola: \n Vi este telefono y me gustaría que me contactaran a este \n correo o al siguiente número +56984682043"
-            binding.etMessage.setText(emailText)
+            val emailText = "Hola: \nVi este teléfono y me gustaría que me contactaran a este correo o al siguiente número +56984682043"
 
-            emailIntent.type = "text/plain"
-            emailIntent.data = Uri.parse("mailto")
-            emailIntent.putExtra(Intent.EXTRA_EMAIL, contact)
-            emailIntent.putExtra(Intent.EXTRA_SUBJECT, "Asunto del correo")
-            emailIntent.putExtra(Intent.EXTRA_TEXT, binding.etMessage.text)
+            // Define el esquema "mailto:" y el destinatario del correo
+            val uriText = "mailto:$contact" +
+                    "?subject=" + Uri.encode("Asunto del correo") +
+                    "&body=" + Uri.encode(emailText)
+            val uri = Uri.parse(uriText)
+            emailIntent.data = uri
 
             startActivity(Intent.createChooser(emailIntent, "Consultar por producto..."))
         }
+
         return binding.root
     }
 

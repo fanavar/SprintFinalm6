@@ -18,12 +18,12 @@
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/cLayoutItemDetail2"
             android:layout_width="match_parent"
-            android:layout_height="726dp">
+            android:layout_height="636dp">
 
             <ImageView
                 android:id="@+id/imageViewItemDetail"
-                android:layout_width="314dp"
-                android:layout_height="252dp"
+                android:layout_width="236dp"
+                android:layout_height="201dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.496"
@@ -33,70 +33,65 @@
                 tools:srcCompat="@tools:sample/avatars" />
 
             <TextView
-                android:id="@+id/tvIDDetail"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="18dp"
-                android:text="ID"
-                app:layout_constraintEnd_toEndOf="@+id/imageViewItemDetail"
-                app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="@+id/imageViewItemDetail"
-                app:layout_constraintTop_toBottomOf="@+id/imageViewItemDetail" />
-
-            <TextView
                 android:id="@+id/tvNameDetail"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="12dp"
+                android:gravity="center"
                 android:text="Name"
-                app:layout_constraintEnd_toEndOf="@+id/tvIDDetail"
-                app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="@+id/tvIDDetail"
-                app:layout_constraintTop_toBottomOf="@+id/tvIDDetail" />
+                android:textSize="24sp"
+                android:textStyle="bold|italic"
+                app:layout_constraintBottom_toTopOf="@+id/imageViewItemDetail"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
                 android:id="@+id/tvPriceDetail"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="11dp"
+                android:layout_marginTop="8dp"
+                android:gravity="center"
                 android:text="Price"
-                app:layout_constraintEnd_toEndOf="@+id/tvNameDetail"
-                app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="@+id/tvNameDetail"
-                app:layout_constraintTop_toBottomOf="@+id/tvNameDetail" />
+                app:layout_constraintEnd_toEndOf="@+id/tvLastPriceDetail"
+                app:layout_constraintHorizontal_bias="0.033"
+                app:layout_constraintStart_toStartOf="@+id/tvLastPriceDetail"
+                app:layout_constraintTop_toBottomOf="@+id/tvLastPriceDetail" />
 
             <TextView
                 android:id="@+id/tvDescriptionDetail"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
+                android:gravity="center"
                 android:text="Description"
-                app:layout_constraintEnd_toEndOf="@+id/tvPriceDetail"
-                app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="@+id/tvPriceDetail"
-                app:layout_constraintTop_toBottomOf="@+id/tvPriceDetail" />
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/imageViewItemDetail" />
 
             <TextView
                 android:id="@+id/tvLastPriceDetail"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="11dp"
+                android:layout_marginTop="14dp"
+                android:gravity="center"
                 android:text="Last Price"
                 app:layout_constraintEnd_toEndOf="@+id/tvDescriptionDetail"
-                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintHorizontal_bias="0.444"
                 app:layout_constraintStart_toStartOf="@+id/tvDescriptionDetail"
-                app:layout_constraintTop_toBottomOf="@+id/tvDescriptionDetail" />
+                app:layout_constraintTop_toBottomOf="@+id/tvCreditDetail" />
 
             <TextView
                 android:id="@+id/tvCreditDetail"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="11dp"
+                android:layout_marginTop="50dp"
+                android:layout_marginBottom="14dp"
+                android:gravity="center"
                 android:text="Credit"
-                app:layout_constraintEnd_toEndOf="@+id/tvLastPriceDetail"
-                app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="@+id/tvLastPriceDetail"
-                app:layout_constraintTop_toBottomOf="@+id/tvLastPriceDetail" />
+                app:layout_constraintBottom_toTopOf="@+id/tvLastPriceDetail"
+                app:layout_constraintEnd_toEndOf="@+id/tvDescriptionDetail"
+                app:layout_constraintHorizontal_bias="0.121"
+                app:layout_constraintStart_toStartOf="@+id/tvDescriptionDetail"
+                app:layout_constraintTop_toBottomOf="@+id/tvDescriptionDetail" />
 
             <Button
                 android:id="@+id/btnContact"
@@ -120,9 +115,27 @@
                 android:text="Message"
                 app:layout_constraintBottom_toTopOf="@+id/btnContact"
                 app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.497"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/imageViewItemDetail"
-                app:layout_constraintVertical_bias="0.957" />
+                app:layout_constraintVertical_bias="0.914" />
+
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.cardview.widget.CardView>
+
+    <TextView
+        android:id="@+id/asd"
+        android:layout_width="414dp"
+        android:layout_height="49dp"
+        android:layout_marginBottom="1dp"
+        android:background="#0097a7"
+        android:gravity="center"
+        android:text="ANONYMOUS PHONE+"
+        android:textColor="#FFFFFF"
+        android:textSize="34sp"
+        app:layout_constraintBottom_toTopOf="@+id/cvItemPhone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
